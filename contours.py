@@ -19,7 +19,7 @@ print(f'{len(contours)} contour(s) found.')
 
 blank = np.zeros(img.shape[:2], dtype='uint8')
 # draw contour to write contour from find contour.
-drawn_contour = cv.drawContours(blank, contours, -1, (255,255,255), 2)
+drawn_contour = cv.drawContours(blan, contours, -1, (255,255,255), 2)
 cv.imshow('Contours Drawn', drawn_contour)
 
 cv.waitKey(0)
