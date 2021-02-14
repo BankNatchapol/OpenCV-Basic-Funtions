@@ -8,7 +8,7 @@ haar_cascade = cv.CascadeClassifier('haarcascades/haar_face.xml')\
 # get bounding box of face 
 # scaleFactor : specifying how much the image size is reduced at each image scale
 # minNeighbors : specifying how many neighbors each candidate rectangle should have to retain it.
-# the more minNeighbors the more noisey
+# the less minNeighbors the more noisey
 faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=7)
 
 print(f'Number of faces found = {len(faces_rect)}')
@@ -24,7 +24,7 @@ group_gray = cv.cvtColor(group_img, cv.COLOR_BGR2GRAY)
 group_haar_cascade = cv.CascadeClassifier('haarcascades/haar_face.xml')
 group_faces_rect = group_haar_cascade.detectMultiScale(group_gray, scaleFactor=1.1, minNeighbors=3)
 
-print(f'Number of faces found = {len(faces_rect)}')
+print(f'Number of faces found = {len(group_faces_rect)}')
 
 for (x, y, w, h) in group_faces_rect:
     cv.rectangle(group_img, (x,y), (x+w,y+h), (0,255,0), thickness=2)
