@@ -6,7 +6,7 @@ while True:
     isTrue, frame = capture.read() # read from video return (is there value, binary image value)
     cv.imshow('Earth', frame) # show image
 
-    if cv.waitKey(20) == ord('d'): # wait for key press 20 ms
+    if cv.waitKey(20) & 0xFF == ord('d'): # wait for key press 20 ms
         break
 
 capture.release() # release resources from machine (webcam, memory) 
