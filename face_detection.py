@@ -1,6 +1,6 @@
 import cv2 as cv
 
-img = cv.imread('photos/lisa/1.jpeg')
+img = cv.imread('photos/train/lisa/1.jpeg')
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 # cascade classifier get xml haarcascade file 
